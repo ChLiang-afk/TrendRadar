@@ -9,6 +9,9 @@ name: Check In
 
 on:
   workflow_dispatch:
+  schedule:
+    # 每 6 天自动签到一次，避免 7 天试用期到期停跑
+    - cron: "0 0 */6 * *"
 
 jobs:
   del_runs:
